@@ -13,17 +13,30 @@ def index(request):
                                         #https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
         # converting JSON data to a dictionary
         list_of_data = json.loads(source)
+        
+
 
         # data for variable list_of_data
+        temp_celsius = int(list_of_data['main']['temp']) - 273.15
         data = {
-            'city': city,
-            "country_code": str(list_of_data['sys']['country']),
-            "coordinate": str(list_of_data['coord']['lon']) + ' '
-                        + str(list_of_data['coord']['lat']),
-            "temp": (int(list_of_data['main']['temp'])-273),
-            "pressure": str(list_of_data['main']['pressure']),
-            "humidity": str(list_of_data['main']['humidity']),
-        }
+    'city': city,
+    "country_code": str(list_of_data['sys']['country']),
+    "coordinate": str(list_of_data['coord']['lon']) + ' ' + str(list_of_data['coord']['lat']),
+    "temp": str(round(temp_celsius, 2)) + '°C',  # Formatting temperature to 2 decimal places and appending '°C'
+    "pressure": str(list_of_data['main']['pressure']),
+    "humidity": str(list_of_data['main']['humidity']),
+}
+        # data = {
+        #     'city': city,
+        #     "country_code": str(list_of_data['sys']['country']),
+        #     "coordinate": str(list_of_data['coord']['lon']) + ' '
+        #                 + str(list_of_data['coord']['lat']),
+        #     "temp": ((int(list_of_data['main']['temp'])-273)+str('C')),
+            
+
+        #     "pressure" : str(list_of_data['main']['pressure']),
+        #     "humidity": str(list_of_data['main']['humidity']),
+        # }
         print(data)
     else:
         data ={}
