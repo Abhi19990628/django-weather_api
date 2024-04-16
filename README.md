@@ -1,4 +1,4 @@
-![Alt Text]("Users\DOMBZ\OneDrive\Pictures\Screenshots 1\Screenshot 2024-04-17 033957.png")
+
 Django Weather Application
 This Django Weather Application provides users with current weather information based on their location. Users can enter their city or allow the application to access their geolocation for weather updates.
 
