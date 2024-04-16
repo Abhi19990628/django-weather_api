@@ -26,6 +26,8 @@ def index(request):
     "pressure": str(list_of_data['main']['pressure']),
     "humidity": str(list_of_data['main']['humidity']),
     "speed": str(list_of_data['wind']['speed'])+"kmph",
+    "temp_min":str(list_of_data['main']['temp_min']),
+    "temp_max":str(list_of_data['main']['temp_max']),
 }
         # data = {
         #     'city': city,
