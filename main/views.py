@@ -25,6 +25,7 @@ def index(request):
     "temp": str(round(temp_celsius, 2)) + '°C',  # Formatting temperature to 2 decimal places and appending '°C'
     "pressure": str(list_of_data['main']['pressure']),
     "humidity": str(list_of_data['main']['humidity']),
+    "speed": str(list_of_data['wind']['speed'])+"kmph",
 }
         # data = {
         #     'city': city,
